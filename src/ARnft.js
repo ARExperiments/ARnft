@@ -116,7 +116,7 @@ export default class ARnft {
     threeGLTFLoader.load(url, gltf => {
       model = gltf.scene
       model.scale.set(scale, scale, scale)
-      model.rotation.x = Math.PI / 2
+      //model.rotation.x = Math.PI / 2
       model.position.x = x
       model.position.y = y
       model.position.z = z
