@@ -6,9 +6,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export default class ARnft {
-  constructor (width, height, config) {
-    this.width = width
-    this.height = height
+  constructor (config) {
     this.root = new THREE.Object3D()
     this.renderer = null
     this.root.matrixAutoUpdate = false
@@ -91,8 +89,8 @@ export default class ARnft {
     return this
   }
 
-  static async init (width, height, markerUrl, config, stats, camera) {
-    const nft = new ARnft(width, height, config)
+  static async init (markerUrl, config, stats, camera) {
+    const nft = new ARnft(config)
     return await nft._initialize(markerUrl, stats, camera)
   }
 
