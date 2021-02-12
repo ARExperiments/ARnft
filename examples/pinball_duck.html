@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>ARnft example showing an image</title>
+	<title>ARnft example with a gltf model</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1">
-	<link rel="stylesheet" href="css/nft-style.css">
+	<link rel="stylesheet" href="examples/css/nft-style.css">
 </head>
 <body>
 
@@ -15,13 +15,13 @@
           🖼 Marker Image
       </a>
 
-		<script src="js/third_party/three.js/three.min.js"></script>
-		<script src="../dist/ARnft.js"></script>
+		<script src="examples/js/third_party/three.js/three.min.js"></script>
+		<script src="dist/ARnft.js"></script>
 
     <script>
-			ARnft.ARnft.init(640, 480, "examples/DataNFT/pinball", 'config.json', true)
+			ARnft.ARnft.init(4000, 2000, "examples/DataNFT/pinball_1x3", 'examples/config.json', true)
 			.then((nft) => {
-				nft.addImage('./Data/aframe-k.png', 0xbbbbff, 180);
+				nft.addModel('examples/Data/models/Duck/glTF/Duck.glb', 80, 80, 40, 80);
 			}).catch((error) => {
 				console.log(error);
 			});

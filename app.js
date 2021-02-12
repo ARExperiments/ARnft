@@ -13,7 +13,7 @@ const options = {
 }; 
 
 app.get('/', (req, res) => {
-    res.sendFile('examples/arNFT_gltf_brave_robot_example.html', { root: __dirname });
+    res.sendFile('examples/pinball_duck.html', { root: __dirname });
 });
 
 // Create the server using ssl files and configured express server
