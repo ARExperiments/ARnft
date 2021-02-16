@@ -19,9 +19,9 @@
 		<script src="dist/ARnft.js"></script>
 
     <script>
-			ARnft.ARnft.init("examples/DataNFT/pinball", 'examples/config.json', true)
+			ARnft.ARnft.init("examples/DataNFT/wall/wall_a4_10_300", 'examples/config.json', true)
 			.then((nft) => {
-				nft.addModel('examples/Data/models/Duck/glTF/Duck.glb', 80, 80, 40, 80);
+				nft.addModel('examples/Data/models/Duck/glTF/Duck.glb', 20, -70, 40, 80);
 			}).catch((error) => {
 				console.log(error);
 			});
