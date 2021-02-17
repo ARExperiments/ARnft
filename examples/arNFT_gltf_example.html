@@ -7,6 +7,78 @@
 	<link rel="stylesheet" href="css/nft-style.css">
 </head>
 <body>
+0
+<canvas id="photoCanvas"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="examples/ua-parser.min.js"></script>
+    <script src="examples/FileSaver.js"></script>
+    <script src="examples/canvas-toBlob.js"></script>
+
+    <script type="text/javascript">
+        var canvas;
+        var photoCanvas;
+        var video;
+        var PCContext;
+        var counter = 0;
+
+        var globalsSetup = false;
+        //setTimeout(setGlobals, 1200);
+
+        function setGlobals() {
+            canvas = document.getElementById("canvas");
+            video = document.getElementById('video');
+
+            photoCanvas = document.getElementById("photoCanvas");
+			photoCanvas.width = video.videoWidth;
+            photoCanvas.height = video.videoHeight;
+            PCContext = photoCanvas.getContext('2d');
+            globalsSetup = true;
+			TakeScreenshot();
+        }
+/*
+		function TestVideo(){
+			var x = 0; var y = 0;
+			PCContext.drawImage(video, x, y);
+            PCContext.drawImage(canvas, x, y);
+
+			 setTimeout(TestVideo, 50);
+		}
+*/
+
+        function TakeScreenshot() {
+			PCContext.drawImage(video, 0, 0);
+            PCContext.drawImage(canvas, 0, 0);;
+
+            photoCanvas.toBlob(function(blob) {
+                counter += 1;
+                saveAs(blob, "Photo_with_snowman_" + counter.toString());
+            });
+        }
+
+
+        function TakeScreenshotWrapper() {
+            if (globalsSetup) {
+                //canvas.style.visibility = "hidden";
+                setTimeout(TakeScreenshot, 500);
+				//setTimeout(TestVideo, 500);
+                setTimeout(() => {
+                    //canvas.style.visibility = "visible"
+                }, 3000);
+            }
+        }
+    </script>
+
+    <button onclick="setGlobals()" style="outline: none; border: none; padding-top: none; padding-bottom: none; padding-left: none; padding-right: none;">
+  <img src="examples/t2.png" style="
+  position: absolute;
+  z-index: 99999999;
+  width: 5pc;
+  height: 4pc;
+  left: 50%;
+  top: 100%;
+  margin-left: -2.5pc;
+  margin-top: -7.5pc;">
+  </button>
 
       <a
           href="https://raw.githubusercontent.com/artoolkitx/artoolkit5/master/doc/Marker%20images/pinball.jpg"
