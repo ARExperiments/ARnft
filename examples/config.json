@@ -1,6 +1,6 @@
 {
   "addPath": "",
-  "cameraPara": "examples/Data/camera_para.dat",
+  "cameraPara": "./Data/camera_para.dat",
   "videoSettings": {
     "width": {
       "min": 640,
@@ -14,7 +14,7 @@
   },
   "loading": {
     "logo": {
-      "src": "examples/Data/arNFT-logo.gif",
+      "src": "./Data/arNFT-logo.gif",
       "alt": "arNFT.js logo"
     },
     "loadingMessage": "Loading, please wait..."
