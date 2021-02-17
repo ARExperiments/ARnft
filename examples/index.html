@@ -19,7 +19,7 @@
 		<script src="../dist/ARnft.js"></script>
 
     <script>
-			ARnft.ARnft.init("./DataNFT/wall/wall_a1_10_300", './config.json', true)
+			ARnft.ARnft.init("examples/DataNFT/wall/wall_a1_10_300", './config.json', true)
 			.then((nft) => {
 				nft.addModel('./Data/models/Duck/glTF/Duck.glb', 20, -70, 40, 80);
 			}).catch((error) => {
